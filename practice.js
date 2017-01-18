@@ -4,7 +4,12 @@
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
+var me = {
+  name: 'David',
+  age: '27',
+}
 
+alert(me.name);
 
 
 
@@ -16,17 +21,26 @@
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
   //Code here
-
+var favoriteThings = {
+  band: 'Blink-182',
+  food: 'Tacos',
+  person: 'Bri',
+  book: 'Lord of the Rings',
+  movie: 'Warrior',
+  holiday: 'Thanksgiving'
+}
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
-
+favoriteThings.car = 'fiero';
+favoriteThings.brand = 'Diamond';
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Code here
-
+favoriteThings.food = 'Lettuce';
+favoriteThings.book = '50 Shades of Gray';
 
 
 
@@ -44,9 +58,16 @@ that is named color, with the value being the color of your backpack. */
 
   //Code here
 
+var backPack = {};
+var item = 'firstPocket';
+backPack[item] = 'chapstick';
+backPack.color = 'orange';
+
 //After you do the above, alert your entire backPack object.
 
   //Code here
+
+alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -54,7 +75,7 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code here
 
-
+console.log(backPack);
 
 
 //NEXT PROBLEM
@@ -65,12 +86,23 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
+var alsoMe = {
+  name: 'David',
+  age: '27',
+  height: '5"7',
+  gender: 'Male',
+  married: 'True',
+  eyeColor: 'Brown',
+  hairColor: 'Brown'
+}
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
 
-
+for (var v in alsoMe){
+  alert(alsoMe[v]);
+}
 
 
 //NEXT PROBLEM
@@ -82,12 +114,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var album = {
+  firstSong: '2 minutes',
+  secondSong: '3 minutes',
+  thirdSong: '30 seconds',
+  fourthSong: '10 minutes',
+  fifthSong: '22 seconds'
+}
+
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
-
-
+for(var v in album){
+  alert(album[v]);
+}
 
 //NEXT PROBLEM
 
@@ -97,11 +138,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
+var states = {
+  Iowa: '5555',
+  Utah: '58693930',
+  Colorado: '4930',
+  Idaho: '1110203',
+  California: '929388193883992818'
+}
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+for(var v in states){
+  if(states[v] > 30000){
+    alert(v);
+  }
+}
 
 
 
@@ -122,11 +174,16 @@ var user1 = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
-
+for(var v in user1){
+  if(!user1[v]){
+    delete user1[v];
+  }
+}
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
-
+user1.name = 'David Mayes';
+user1.username = 'daveMayes';
 
 
 
@@ -150,12 +207,14 @@ var user2 = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+user2.name = 'Tyler S. McGinnis';
+user2.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
 
-
+user2.sayEmail();
 
 
 //NEXT PROBLEM
@@ -167,17 +226,26 @@ var user2 = {
 
   //Code Here
 
+var methodCollection = {};
+
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+methodCollection.alertHello = function(){
+  alert('hello');
+}
 
+methodCollection.logHello = function(){
+  console.log('hello');
+}
 //Now call your alertHello and logHello methods.
 
   //Code Here
 
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 //NEXT PROBLEM
 
@@ -188,7 +256,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
+var makePerson = function(name, birthday, ssn){
+  var personObj = {};
+  personObj.name = name;
+  personObj.birthday = birthday;
+  personObj.ssn = ssn;
+  return personObj;
+}
 
+console.log(makePerson('David', '1/4/89', '45-38389'));
 
 //NEXT PROBLEM
 
@@ -198,6 +274,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
+var makeCard = function(cardNumber, expirationDate, securityCode){
+  var creditCard = {};
+  creditCard.cardNumber = cardNumber;
+  creditCard.expirationDate = expirationDate;
+  creditCard.securityCode = securityCode;
+  return creditCard;
+}
 
 
 //NEXT PROBLEM
@@ -210,3 +293,16 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+
+var bindCard = function(person, creditCard){
+  var binded = {}
+  binded.name = person.name;
+  binded.birthday = person.birthday;
+  binded.ssn = person.ssn;
+  binded.cardNumber = creditCard.cardNumber;
+  binded.expirationDate = creditCard.expirationDate;
+  binded.securityCode = creditCard.securityCode;
+  return binded;
+}
+
+binded(makePerson('David', '1/4/89', '45-38389'), makeCard('29293829','12/34','324'));
