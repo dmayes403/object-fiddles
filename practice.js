@@ -6,11 +6,10 @@
   //Code here
 var me = {
   name: 'David',
-  age: '27',
+  age: '28'
 }
 
 alert(me.name);
-
 
 
 //NEXT PROBLEM
@@ -22,26 +21,26 @@ alert(me.name);
 
   //Code here
 var favoriteThings = {
-  band: 'Blink-182',
-  food: 'Tacos',
+  band: 'Maroon 5',
+  food: 'Hawaiian Haystacks',
   person: 'Bri',
-  book: 'Lord of the Rings',
-  movie: 'Warrior',
-  holiday: 'Thanksgiving'
+  book: 'Javascript',
+  movie: 'Lord of the Rings',
+  holiday: 'Black Friday'
 }
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
-favoriteThings.car = 'fiero';
-favoriteThings.brand = 'Diamond';
+favoriteThings.car = 'Integra';
+favoriteThings.brand = 'Acura';
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Code here
+
 favoriteThings.food = 'Lettuce';
 favoriteThings.book = '50 Shades of Gray';
-
 
 
 //NEXT PROBLEM
@@ -62,6 +61,7 @@ var backPack = {};
 var item = 'firstPocket';
 backPack[item] = 'chapstick';
 backPack.color = 'orange';
+
 
 //After you do the above, alert your entire backPack object.
 
@@ -86,23 +86,23 @@ console.log(backPack);
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
+
 var alsoMe = {
-  name: 'David',
+  name: 'Dave',
   age: '27',
-  height: '5"7',
+  height: '5\'7\"',
   gender: 'Male',
-  married: 'True',
+  married: 'Yes',
   eyeColor: 'Brown',
   hairColor: 'Brown'
 }
-
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
-
-for (var v in alsoMe){
+for(var v in alsoMe){
   alert(alsoMe[v]);
 }
+
 
 
 //NEXT PROBLEM
@@ -113,22 +113,22 @@ for (var v in alsoMe){
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
   //Code Here
-
 var album = {
-  firstSong: '2 minutes',
-  secondSong: '3 minutes',
-  thirdSong: '30 seconds',
-  fourthSong: '10 minutes',
-  fifthSong: '22 seconds'
+  hello: '2:00',
+  goodbye: '10:21',
+  sayHi: '3:33',
+  Tutoo: '1:12:45',
+  Bingo: '1:32'
 }
+
 
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
-
 for(var v in album){
-  alert(album[v]);
+  alert(v);
 }
+
 
 //NEXT PROBLEM
 
@@ -138,29 +138,26 @@ for(var v in album){
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
-var states = {
-  Iowa: '5555',
-  Utah: '58693930',
-  Colorado: '4930',
-  Idaho: '1110203',
-  California: '929388193883992818'
-}
 
+var states = {
+  florida: '2837372',
+  indiana: '6627',
+  mississippi: '82827',
+  oklahoma: '3456',
+  maine: '98292392839239'
+}
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-for(var v in states){
-  if(states[v] > 30000){
-    alert(v);
+
+for(var k in states){
+  if(states[k] > 30000){
+    alert(k);
   }
 }
 
 
-
 //NEXT PROBLEM
-
-
-
 
 var user1 = {
     name: 'Tyler McGinnis',
@@ -170,27 +167,26 @@ var user1 = {
     username: 'tylermcginnis33',
     age: 0
 }
+
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
-for(var v in user1){
-  if(!user1[v]){
-    delete user1[v];
+
+  for(var k in user1){
+    if(!user1[k]){
+      delete user1[k];
+    }
   }
-}
+  console.log(user1);
+
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
-user1.name = 'David Mayes';
-user1.username = 'daveMayes';
-
-
+user1.name = 'Dave';
+user1.username = 'daveMayes7172';
 
 //NEXT PROBLEM
-
-
-
 
 var user2 = {
         name: 'Tyler McGinnis',
@@ -203,18 +199,19 @@ var user2 = {
             alert('Email is : ' + this.email);
         }
 };
+
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+
 user2.name = 'Tyler S. McGinnis';
 user2.email = 'tyler.mcginnis@devmounta.in';
-
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
-
 user2.sayEmail();
+
 
 
 //NEXT PROBLEM
@@ -240,12 +237,13 @@ methodCollection.alertHello = function(){
 methodCollection.logHello = function(){
   console.log('hello');
 }
+
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
 methodCollection.alertHello();
 methodCollection.logHello();
+
 
 //NEXT PROBLEM
 
@@ -257,29 +255,25 @@ methodCollection.logHello();
   //Code Here
 
 var makePerson = function(name, birthday, ssn){
-  var personObj = {};
-  personObj.name = name;
-  personObj.birthday = birthday;
-  personObj.ssn = ssn;
-  return personObj;
+  var newPerson = {};
+  newPerson.name = name;
+  newPerson.birthday = birthday;
+  newPerson.ssn = ssn;
+  return newPerson;
 }
 
-console.log(makePerson('David', '1/4/89', '45-38389'));
-
 //NEXT PROBLEM
-
-
 
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
   //Code Here
 
 var makeCard = function(cardNumber, expirationDate, securityCode){
-  var creditCard = {};
-  creditCard.cardNumber = cardNumber;
-  creditCard.expirationDate = expirationDate;
-  creditCard.securityCode = securityCode;
-  return creditCard;
+  var newCard = {};
+  newCard.cardNumber = cardNumber;
+  newCard.expirationDate = expirationDate;
+  newCard.securityCode = securityCode;
+  return newCard;
 }
 
 
@@ -294,15 +288,15 @@ var makeCard = function(cardNumber, expirationDate, securityCode){
 
   //Code Here
 
-var bindCard = function(person, creditCard){
-  var binded = {}
-  binded.name = person.name;
-  binded.birthday = person.birthday;
-  binded.ssn = person.ssn;
-  binded.cardNumber = creditCard.cardNumber;
-  binded.expirationDate = creditCard.expirationDate;
-  binded.securityCode = creditCard.securityCode;
-  return binded;
-}
+  var bindCard = function(person, newCard){
+      var binded = {};
+      binded.name = person.name;
+      binded.birthday = person.birthday;
+      binded.ssn = person.ssn;
+      binded.cardNumber = newCard.cardNumber;
+      binded.expirationDate = newCard.expirationDate;
+      binded.securityCode = newCard.securityCode;
+      return binded;
+  }
 
-binded(makePerson('David', '1/4/89', '45-38389'), makeCard('29293829','12/34','324'));
+  console.log(bindCard(makePerson('Dave','4/18/89','2323232'),makeCard('389293848','1/12/43','453')));
